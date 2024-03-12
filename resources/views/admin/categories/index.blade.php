@@ -33,8 +33,7 @@
                   <div class="card-footer">
                     <!--/.card-header -->
                   <div class="card-body">
-                        <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Добавить
-                            категорию</a> 
+                        <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Добавить категорию</a> 
                             @if (count($categories))
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover text-nowrap">
@@ -75,7 +74,7 @@
                                   </table>
                                 </div>
                       @else
-                        <р>Категорий пока нет...</p>
+                        Категорий пока нет...
                       @endif
                   </div>
             <!--/.card-body -->
