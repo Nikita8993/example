@@ -220,7 +220,12 @@
                   <p>Новая категория</p>
                 </a>
               </li>
-
+              <li class="nav-item">
+                <a href="{{route('categories.edit')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Новая категория</p>
+                </a>
+              </li>
           </li>
         </ul>
       </nav>
