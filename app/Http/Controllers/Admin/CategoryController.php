@@ -51,7 +51,7 @@ class CategoryController extends Controller
     public function edit( $id)
     {
         $category = Category::find($id);
-        return view('categories.edit', compact('category'));
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -72,6 +72,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        dd(__METHOD__);
+        Category::destroy($id);
+        return redirect()->route('categories.index')->with('success','Категория удалена');
     }
 }
