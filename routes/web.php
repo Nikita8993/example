@@ -26,7 +26,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/', [MainController::class, 'index']) ->name('admin.index');
     Route::resource('/categories', CategoryController::class);
     Route::resource('/tags', TagController::class);
-    Route::resource('/posts', PostController::class);
+    Route::resource('/posts', PostController::class,'create')->('admin.index');
 });
 
 // Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){

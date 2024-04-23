@@ -202,7 +202,7 @@
               </a>
             </li>
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
+              <a href="/admin/categories" class="nav-link">
                 <i class="nav-icon fas fa-archive"></i>
                 <p>
                   Категории
@@ -227,7 +227,7 @@
             </li>
 
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
+              <a href="/admin/tags" class="nav-link">
                 <i class="nav-icon fas fa-tag"></i>
                 <p>
                   Тэги
@@ -252,7 +252,7 @@
             </li>
 
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
+              <a href="/admin/posts" class="nav-link">
                 <i class="nav-icon fas fa-tag"></i>
                 <p>
                   Статьи
