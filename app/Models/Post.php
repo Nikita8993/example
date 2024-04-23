@@ -10,7 +10,7 @@ class Post extends Model
 {
     use Sluggable;
 
-    public function  tags()
+    public function tags()
     {
         return $this->belongsToMany(Tag::class);
     }
@@ -22,11 +22,12 @@ class Post extends Model
 
     public function sluggable():array
     {
-        return[
-            'slug'=>[
+        return [
+            'slug' => [
                 'source'=>'title'
             ]
-            ];
+        ];
     }
 
+    
 }

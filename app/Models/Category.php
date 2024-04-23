@@ -12,17 +12,18 @@ class Category extends Model
 
     public function posts()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(post::class);
     }
 
     public function sluggable():array
     {
-        return[
-            'slug'=>[
+        return [
+            'slug' => [
                 'source'=>'title'
             ]
-            ];
+        ];
+
+        
     }
-
-
+    protected $fillable = ['title', 'slug'];
 }

@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,8 +15,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts =Post::paginate(20);
-        return view('admin.posts.index',compact('posts'));
+        $posts = Post::paginate(20);
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -22,8 +25,8 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::pluck('title', 'id')->all();
-        $tags = Tag::pluck('title','id')->all();
-        return view('admin.posts.create', compact('categories','tags'));
+        $tags = Tag::pluck('title', 'id')->all();
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -32,11 +35,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'=>'required',
+            'title' => 'required',
         ]);
         dd($request->all());
-
-        return redirect()->route('posts.index')->with('success','Статья добавлена');
+        return redirect()->route('posts.index')->with('success', 'Статья добавлена');
     }
 
     /**
@@ -61,10 +63,10 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' =>  'required',
+            'title' => 'required',
         ]);
 
-        return redirect()->route('posts.index')->with('succes','Iзменения сохранены');
+        return redirect()->route('posts.index')->with('success', 'Изменения сохранены');
     }
 
     /**
@@ -72,6 +74,8 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        return redirect()->route('posts.index')->with('success','Статья удалена');
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->route('posts.index')->with('success', 'Статья удалена');
     }
 }

@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Редактирование категории</h1>
+            <h1>Создание тэга</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -26,11 +26,10 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Категория "{{ $category->title }}"</h3>
+          <h3 class="card-title">Создание тэга</h3>
         </div>
-        <form role="form" method="post" action="{{route('categories.update', ['category' => $category->id])}}">
+        <form role="form" method="post" action="{{route('tags.store')}}">
             @csrf
-            @method('PUT')
             <div class="card-body">
                 <div class="form-group">
                     <label for="title">Название</label>

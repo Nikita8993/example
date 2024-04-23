@@ -10,17 +10,18 @@ class Tag extends Model
 {
     use Sluggable;
 
-    public function  posts()
+    public function posts()
     {
         return $this->belongsToMany(Post::class);
     }
 
     public function sluggable():array
     {
-        return[
-            'slug'=>[
+        return [
+            'slug' => [
                 'source'=>'title'
             ]
         ];
     }
+    protected $fillable = ['title', 'slug'];
 }
